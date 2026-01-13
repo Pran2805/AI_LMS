@@ -14,9 +14,9 @@ app.use(morgan("combined"))
 
 
 // just check logger is working or not
-app.get("/pino", (req, res) => {
-  req.log.info("pino")
-  res.send("pino logger testing")
-})
+// app.get("/pino", (req, res) => {
+//   req.log.info("pino")
+//   res.send("pino logger testing")
+// })
 
 export default app;
