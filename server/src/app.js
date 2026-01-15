@@ -3,7 +3,7 @@ import httpLogger from './middlewares/httLogger.js';
 import { rateLimiterMiddleware } from './middlewares/rateLimiter.middleware.js';
 import morgan from 'morgan'
 import helmet from 'helmet'
-
+import { urlencoded } from 'express';
 const app = express()
 
 app.use(httpLogger)
@@ -12,6 +12,8 @@ app.use(express.urlencoded({extended: true}))
 app.use(rateLimiterMiddleware)
 app.use(helmet())
 app.use(morgan("combined"))
+
+
 
 
 // just check logger is working or not
