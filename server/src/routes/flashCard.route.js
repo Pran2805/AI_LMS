@@ -6,43 +6,42 @@ import {
     toggleFlashCard,
     deleteFlashCard
 } from "../controllers/flashCard.controller.js";
-
-import authMiddleware from "../middlewares/auth.middleware.js";
+import { protect } from "../middlewares/auth.middleware.js";
 
 const router = express.Router();
 
 // Get all flashcard sets (per document)
 router.get(
     "/sets",
-    authMiddleware,
+    protect,
     getAllFlashCardSets
 );
 
 // Get all flashcards for a document
 router.get(
     "/:documentId",
-    authMiddleware,
+    protect,
     getAllFlashCards
 );
 
 // Review a flashcard
 router.patch(
     "/:documentId/:cardId/review",
-    authMiddleware,
+    protect,
     reviewFlashCard
 );
 
 // Toggle starred flashcard
 router.patch(
     "/:documentId/:cardId/toggle",
-    authMiddleware,
+    protect,
     toggleFlashCard
 );
 
 // Delete a flashcard
 router.delete(
     "/:documentId/:cardId",
-    authMiddleware,
+    protect,
     deleteFlashCard
 );
 
