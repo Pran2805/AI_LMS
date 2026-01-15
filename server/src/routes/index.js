@@ -5,9 +5,9 @@ const app = Router();
 
 // add all routes below
 // eg. app.use("/api/users", userRouter)
-app.use("/api", rateLimiterMiddleware)
+app.use("/v1", rateLimiterMiddleware)
 
 // todo: add all the api belows
-app.use("/api/documents", documentRouter)
+app.use("/v1/documents", documentRouter)
 
 export default app;

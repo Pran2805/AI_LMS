@@ -6,12 +6,13 @@ import helmet from 'helmet'
 
 const app = express()
 
-app.use(httpLogger)
+// app.use(httpLogger)
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(rateLimiterMiddleware)
 app.use(helmet())
 app.use(morgan("combined"))
+
 
 
 // just check logger is working or not
