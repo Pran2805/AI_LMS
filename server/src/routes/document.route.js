@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { upload } from "../middlewares/multer.middleware.js";
-import { uploadDocument, getDocuments, getDocumentById, deleteDocument } from "../controllers/document.controller.js";
+import { uploadDocument, getDocuments, getDocumentById, deleteDocument, updateDocument } from "../controllers/document.controller.js";
 import { protect } from "../middlewares/auth.middleware.js";
 
 const router = Router()
