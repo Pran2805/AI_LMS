@@ -2,14 +2,14 @@ import app from "./app.js";
 import { connectDB } from "./db/index.js";
 import router from "./routes/index.js";
 import { ENV } from "./utils/env.js";
+import userRoutes from './routes/user.routes.js';
+import errorHandler from './middlewares/errorHandler.js';
 
-app.use("/api", router)
 const port = ENV.port;
 
-import userRoutes from './routes/user.routes.js';
 app.use("/api/users", userRoutes)
+app.use("/api", router)
 
-import errorHandler from './middlewares/errorHandler.js';
 app.use(errorHandler);
 
 

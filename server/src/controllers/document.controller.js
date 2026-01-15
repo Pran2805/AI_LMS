@@ -90,7 +90,7 @@ export const uploadDocument = async(req, res) => {
         // Create document WITHOUT userId (or with a dummy value)
         const document = await Document.create({
             // Remove userId or use a valid ObjectId if required by schema
-            // userId: req.user?._id, // Comment this out
+            userId: req.user?._id, // Comment this out
             title,
             fileName: req.file.originalname,
             filePath: req.file.path,
